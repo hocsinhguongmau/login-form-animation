@@ -1,0 +1,80 @@
+* {
+  box-sizing: border-box;
+}
+
+$color-1: rgb(113, 97, 207);
+$color-2: rgb(88, 75, 161);
+$color-3: rgb(213, 208, 245);
+
+body {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+.button {
+  background: $color-1;
+  border: none;
+  border-radius: 5px;
+  padding: 6px 10px;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  margin: 0 10px;
+  transition: all ease-out 0.2s;
+  &:hover {
+    background: $color-2;
+  }
+  &.close-button {
+    position: absolute;
+    top: -10px;
+    right: -20px;
+    z-index: 10;
+    border-radius: 100%;
+  }
+}
+
+.form {
+  position: fixed;
+  z-index: 10;
+  top: 50%;
+  left: 50%;
+  background-color: $color-3;
+  max-width: 300px;
+  padding: 30px;
+  margin: auto;
+  border-radius: 10px;
+  transform: translate(-150%, -50%) scale(0);
+  opacity: 0;
+  transition: all ease-out 0.3s;
+
+  &.active {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  &.closing {
+    transform: translate(50%, -50%) scale(0);
+    opacity: 0;
+  }
+  h2 {
+    text-align: center;
+    margin: 0;
+  }
+  .row {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-around;
+  }
+  label {
+    font-size: 14px;
+    line-height: 30px;
+  }
+  input[type='text'],
+  input[type='password'] {
+    padding: 0 5px;
+    height: 30px;
+    border: 0;
+    border-radius: 3px;
+    outline: none;
+    margin-left: 10px;
+  }
+}
